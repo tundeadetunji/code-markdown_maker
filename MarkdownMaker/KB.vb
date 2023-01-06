@@ -23,6 +23,9 @@ Public Class KB
             Case elements.h6.ToString
                 result.Add("###### ")
                 result.Add("")
+            Case elements.hr.ToString
+                result.Add(vbCrLf & vbCrLf & "---" & vbCrLf & vbCrLf)
+                result.Add("")
             Case elements.li.ToString
                 result.Add("+ ")
                 result.Add("")
@@ -88,6 +91,7 @@ Public Class KB
         h4
         h5
         h6
+        hr
         i
         li
         p
