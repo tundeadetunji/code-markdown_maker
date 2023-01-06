@@ -81,10 +81,7 @@ Public Class KB
     End Function
 
     Public Enum elements
-        a
-        a_verbose
         blockquote
-        code
         h1
         h2
         h3
@@ -92,14 +89,19 @@ Public Class KB
         h5
         h6
         i
-        img
         li
         p
+        __________________________
+        a
+        a_verbose
+        code
+        img
         pre
         strikethrough
         strong
         strong_i
         video
+
     End Enum
 
     Public Enum defaultLanguage

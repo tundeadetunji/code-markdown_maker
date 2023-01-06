@@ -34,12 +34,15 @@ Public Class Form1
     End Sub
 
     Private Sub dropMarkup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropElement.SelectedIndexChanged
-        Dim t As TextBox = textMarkup
+        If Content(dropElement) = elements.__________________________.ToString Then Return
+
+        Dim t As RichTextBox = textMarkup
         Dim drop As ComboBox = dropElement
 
         If t.SelectionLength < 1 Then
             If Content(drop) = elements.i.ToString Or
                     Content(drop) = elements.strong.ToString Or
+                    Content(drop) = elements.strong_i.ToString Or
                     Content(drop) = elements.strikethrough.ToString Or
                     Content(drop) = elements.a_verbose.ToString Or
                     Content(drop) = elements.a.ToString Or
@@ -93,7 +96,7 @@ Public Class Form1
     Private Sub textMarkup_KeyDown(sender As Object, e As KeyEventArgs) Handles textMarkup.KeyDown
         'If e.KeyCode = Keys.Z AndAlso (e.Control) Then
         '    textMarkup.Undo()
-
         'End If
+
     End Sub
 End Class
