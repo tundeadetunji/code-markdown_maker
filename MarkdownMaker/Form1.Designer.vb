@@ -24,7 +24,6 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.dropElement = New System.Windows.Forms.ComboBox()
-        Me.textMarkup = New System.Windows.Forms.TextBox()
         Me.buttonFont = New System.Windows.Forms.Button()
         Me.FontDialog = New System.Windows.Forms.FontDialog()
         Me.buttonSave = New System.Windows.Forms.Button()
@@ -32,6 +31,7 @@ Partial Class Form1
         Me.buttonSendToClipboard = New System.Windows.Forms.Button()
         Me.buttonOpen = New System.Windows.Forms.Button()
         Me.buttonElement = New System.Windows.Forms.Button()
+        Me.textMarkup = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
         'dropElement
@@ -43,18 +43,6 @@ Partial Class Form1
         Me.dropElement.Name = "dropElement"
         Me.dropElement.Size = New System.Drawing.Size(341, 33)
         Me.dropElement.TabIndex = 1
-        '
-        'textMarkup
-        '
-        Me.textMarkup.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.textMarkup.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.textMarkup.Location = New System.Drawing.Point(13, 53)
-        Me.textMarkup.Multiline = True
-        Me.textMarkup.Name = "textMarkup"
-        Me.textMarkup.Size = New System.Drawing.Size(934, 360)
-        Me.textMarkup.TabIndex = 0
         '
         'buttonFont
         '
@@ -69,8 +57,8 @@ Partial Class Form1
         'buttonSave
         '
         Me.buttonSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonSave.Image = Global.MarkdownMaker.My.Resources.Resources.Alarm_Arrow_Up_icon_24
-        Me.buttonSave.Location = New System.Drawing.Point(737, 14)
+        Me.buttonSave.Image = Global.MarkdownMaker.My.Resources.Resources.Actions_document_save_as_icon_24
+        Me.buttonSave.Location = New System.Drawing.Point(809, 14)
         Me.buttonSave.Name = "buttonSave"
         Me.buttonSave.Size = New System.Drawing.Size(66, 33)
         Me.buttonSave.TabIndex = 2
@@ -87,8 +75,8 @@ Partial Class Form1
         'buttonSendToClipboard
         '
         Me.buttonSendToClipboard.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonSendToClipboard.Image = Global.MarkdownMaker.My.Resources.Resources.Actions_document_save_as_icon_24
-        Me.buttonSendToClipboard.Location = New System.Drawing.Point(809, 14)
+        Me.buttonSendToClipboard.Image = Global.MarkdownMaker.My.Resources.Resources.Alarm_Arrow_Up_icon_24
+        Me.buttonSendToClipboard.Location = New System.Drawing.Point(737, 14)
         Me.buttonSendToClipboard.Name = "buttonSendToClipboard"
         Me.buttonSendToClipboard.Size = New System.Drawing.Size(66, 33)
         Me.buttonSendToClipboard.TabIndex = 5
@@ -112,19 +100,31 @@ Partial Class Form1
         Me.buttonElement.TabIndex = 8
         Me.buttonElement.UseVisualStyleBackColor = True
         '
+        'textMarkup
+        '
+        Me.textMarkup.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.textMarkup.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.textMarkup.Location = New System.Drawing.Point(13, 53)
+        Me.textMarkup.Name = "textMarkup"
+        Me.textMarkup.Size = New System.Drawing.Size(934, 360)
+        Me.textMarkup.TabIndex = 9
+        Me.textMarkup.Text = ""
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(961, 427)
+        Me.Controls.Add(Me.textMarkup)
         Me.Controls.Add(Me.buttonElement)
         Me.Controls.Add(Me.buttonOpen)
         Me.Controls.Add(Me.buttonSendToClipboard)
         Me.Controls.Add(Me.dropLanguage)
         Me.Controls.Add(Me.buttonSave)
         Me.Controls.Add(Me.buttonFont)
-        Me.Controls.Add(Me.textMarkup)
         Me.Controls.Add(Me.dropElement)
         Me.Font = New System.Drawing.Font("Cascadia Code ExtraLight", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -133,12 +133,10 @@ Partial Class Form1
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Markdown Maker"
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents dropElement As ComboBox
-    Friend WithEvents textMarkup As TextBox
     Friend WithEvents buttonFont As Button
     Friend WithEvents FontDialog As FontDialog
     Friend WithEvents buttonSave As Button
@@ -146,4 +144,5 @@ Partial Class Form1
     Friend WithEvents buttonSendToClipboard As Button
     Friend WithEvents buttonOpen As Button
     Friend WithEvents buttonElement As Button
+    Friend WithEvents textMarkup As RichTextBox
 End Class
