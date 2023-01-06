@@ -69,7 +69,7 @@ Partial Class Form1
         'buttonSave
         '
         Me.buttonSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonSave.Image = Global.MarkdownMaker.My.Resources.Resources._2_Hot_Printer_icon_24
+        Me.buttonSave.Image = Global.MarkdownMaker.My.Resources.Resources.Alarm_Arrow_Up_icon_24
         Me.buttonSave.Location = New System.Drawing.Point(737, 14)
         Me.buttonSave.Name = "buttonSave"
         Me.buttonSave.Size = New System.Drawing.Size(66, 33)
@@ -87,7 +87,7 @@ Partial Class Form1
         'buttonSendToClipboard
         '
         Me.buttonSendToClipboard.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.buttonSendToClipboard.Image = Global.MarkdownMaker.My.Resources.Resources.Alarm_Arrow_Right_icon_24
+        Me.buttonSendToClipboard.Image = Global.MarkdownMaker.My.Resources.Resources.Actions_document_save_as_icon_24
         Me.buttonSendToClipboard.Location = New System.Drawing.Point(809, 14)
         Me.buttonSendToClipboard.Name = "buttonSendToClipboard"
         Me.buttonSendToClipboard.Size = New System.Drawing.Size(66, 33)
@@ -96,7 +96,7 @@ Partial Class Form1
         '
         'buttonOpen
         '
-        Me.buttonOpen.Image = Global.MarkdownMaker.My.Resources.Resources.text_x_markdown_icon_24
+        Me.buttonOpen.Image = Global.MarkdownMaker.My.Resources.Resources.Alarm_Arrow_Down_icon_24
         Me.buttonOpen.Location = New System.Drawing.Point(13, 14)
         Me.buttonOpen.Name = "buttonOpen"
         Me.buttonOpen.Size = New System.Drawing.Size(66, 33)

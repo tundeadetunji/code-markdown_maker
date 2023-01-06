@@ -4,7 +4,7 @@ Public Class KB
     Public Shared Function getSnippet(element As String, Optional text As String = "", Optional language As String = "") As List(Of String)
         Dim result As New List(Of String)
         Select Case element
-        'inline
+
             Case elements.h1.ToString
                 result.Add("# ")
                 result.Add("")
@@ -27,23 +27,29 @@ Public Class KB
                 result.Add("+ ")
                 result.Add("")
             Case elements.p.ToString
-                result.Add(vbCrLf & vbCrLf)
+                result.Add("  " & vbCrLf & vbCrLf)
                 result.Add("")
 
 
-        'block
+
             Case elements.i.ToString
                 result.Add("*")
                 result.Add("*")
             Case elements.strong.ToString
                 result.Add("**")
                 result.Add("**")
+            Case elements.strong.ToString
+                result.Add("***")
+                result.Add("***")
             Case elements.strikethrough.ToString
                 result.Add("~~")
                 result.Add("~~")
             Case elements.a_verbose.ToString
                 result.Add("<")
                 result.Add(">")
+            Case elements.blockquote.ToString
+                result.Add("> ")
+                result.Add("")
             Case elements.a.ToString
                 Dim tokens As List(Of String) = SplitTextInSplits(text, "/", SideToReturn.AsListOfString)
                 Dim token As String = tokens(tokens.Count - 1)
@@ -75,6 +81,10 @@ Public Class KB
     End Function
 
     Public Enum elements
+        a
+        a_verbose
+        blockquote
+        code
         h1
         h2
         h3
@@ -82,15 +92,13 @@ Public Class KB
         h5
         h6
         i
-        strong
-        strikethrough
-        li
-        a
-        a_verbose
         img
-        code
-        pre
+        li
         p
+        pre
+        strikethrough
+        strong
+        strong_i
         video
     End Enum
 

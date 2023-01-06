@@ -20,7 +20,7 @@ Public Class Form1
         BindProperty(dropLanguage, GetEnum(New defaultLanguage))
         BindProperty(dropElement, GetEnum(New elements))
         formatDrops({dropLanguage, dropElement})
-        textMarkup.Text = "### welcome"
+        textMarkup.Focus()
     End Sub
 
     Sub formatDrops(drops As Array)
@@ -72,6 +72,7 @@ Public Class Form1
             t.Text = pre & code(0) & text & code(1) & suf
         End If
 
+        t.SelectionStart = s ''+ l
         t.ScrollToCaret()
 
     End Sub
@@ -87,5 +88,12 @@ Public Class Form1
 
     Private Sub buttonElement_Click(sender As Object, e As EventArgs) Handles buttonElement.Click
         dropMarkup_SelectedIndexChanged(sender, e)
+    End Sub
+
+    Private Sub textMarkup_KeyDown(sender As Object, e As KeyEventArgs) Handles textMarkup.KeyDown
+        'If e.KeyCode = Keys.Z AndAlso (e.Control) Then
+        '    textMarkup.Undo()
+
+        'End If
     End Sub
 End Class
