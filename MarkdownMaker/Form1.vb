@@ -1,11 +1,10 @@
 ﻿Imports iNovation.Code.Desktop
 Imports iNovation.Code.General
 Imports MarkdownMaker.KB
+Imports iNovation.Code.Feedback
 Public Class Form1
 
-    Dim t As RichTextBox = textMarkup
-    Dim drop As ComboBox = dropElement
-
+    Private feedback As New iNovation.Code.Feedback
 
     Private Sub buttonFont_Click(sender As Object, e As EventArgs) Handles buttonFont.Click
         FontDialog.ShowDialog()
@@ -39,34 +38,36 @@ Public Class Form1
     End Sub
 
     Private Sub dropElement_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropElement.SelectedIndexChanged
-        If IsEmpty(t) Then Return
+        If Content(textMarkup).Length < 1 Then Return
         showSnippet()
     End Sub
 
     Sub showSnippet()
+
+        Dim t As RichTextBox = textMarkup
+        Dim drop As ComboBox = dropElement
+
         If Content(dropElement) = elements.__________________________.ToString Then Return
 
-
         If t.SelectionLength < 1 Then
-            If Content(drop) = elements.i.ToString Or
+            If Content(drop) = elements.a.ToString Or
+                    Content(drop) = elements.a_verbose.ToString Or
+                    Content(drop) = elements.code.ToString Or
+                    Content(drop) = elements.i.ToString Or
+                    Content(drop) = elements.img.ToString Or
+                    Content(drop) = elements.pre.ToString Or
+                    Content(drop) = elements.strikethrough.ToString Or
                     Content(drop) = elements.strong.ToString Or
                     Content(drop) = elements.strong_i.ToString Or
-                    Content(drop) = elements.strikethrough.ToString Or
-                    Content(drop) = elements.a_verbose.ToString Or
-                    Content(drop) = elements.a.ToString Or
-                    Content(drop) = elements.img.ToString Or
-                    Content(drop) = elements.code.ToString Or
-                    Content(drop) = elements.pre.ToString Or
                     Content(drop) = elements.video.ToString Then
+                feedback.say("please make a selection first")
                 Return
             End If
         End If
 
-
         Dim pre As String = t.Text.Substring(0, t.SelectionStart)
         Dim suf As String = t.Text.Substring(t.SelectionLength + t.SelectionStart)
-        Dim text As String = t.Text.Substring(t.SelectionStart, t.SelectionLength)
-
+        Dim text As String = t.Text.Substring(t.SelectionStart, t.SelectionLength).Trim.Replace(vbCrLf, "").Replace(vbCr, "")
         Dim code As List(Of String) = getSnippet(Content(dropElement), text, Content(dropLanguage))
 
         textMarkup.Focus()
@@ -74,11 +75,11 @@ Public Class Form1
         Dim l = t.SelectionLength
 
         If dropElement.Text = elements.a.ToString Then
-            t.Text = pre & code(0) ''& text & code(1) & suf
+            t.Text = pre & code(0) & vbCrLf & suf
         ElseIf dropElement.Text = elements.img.ToString Then
-            t.Text = pre & code(0) ''& text & code(1) & suf
+            t.Text = pre & code(0) & vbCrLf & suf
         ElseIf dropElement.Text = elements.video.ToString Then
-            t.Text = pre & code(0) ''& text & code(1) & suf
+            t.Text = pre & code(0) & vbCrLf & suf
         Else
             t.Text = pre & code(0) & text & code(1) & suf
         End If
@@ -97,7 +98,7 @@ Public Class Form1
     End Sub
 
     Private Sub buttonElement_Click(sender As Object, e As EventArgs) Handles buttonElement.Click
-        dropMarkup_SelectedIndexChanged(sender, e)
+        dropElement_SelectedIndexChanged(sender, e)
     End Sub
 
     Private Sub textMarkup_KeyDown(sender As Object, e As KeyEventArgs) Handles textMarkup.KeyDown
