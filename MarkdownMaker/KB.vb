@@ -41,7 +41,7 @@ Public Class KB
             Case elements.strong.ToString
                 result.Add("**")
                 result.Add("**")
-            Case elements.strong.ToString
+            Case elements.strong_i.ToString
                 result.Add("***")
                 result.Add("***")
             Case elements.strikethrough.ToString
@@ -92,13 +92,13 @@ Public Class KB
         h5
         h6
         hr
-        i
         li
         p
         __________________________
         a
         a_verbose
         code
+        i
         img
         pre
         strikethrough

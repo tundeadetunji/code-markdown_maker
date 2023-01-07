@@ -2,6 +2,11 @@
 Imports iNovation.Code.General
 Imports MarkdownMaker.KB
 Public Class Form1
+
+    Dim t As RichTextBox = textMarkup
+    Dim drop As ComboBox = dropElement
+
+
     Private Sub buttonFont_Click(sender As Object, e As EventArgs) Handles buttonFont.Click
         FontDialog.ShowDialog()
         textMarkup.Font = FontDialog.Font
@@ -33,11 +38,14 @@ Public Class Form1
         Next
     End Sub
 
-    Private Sub dropMarkup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropElement.SelectedIndexChanged
+    Private Sub dropElement_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropElement.SelectedIndexChanged
+        If IsEmpty(t) Then Return
+        showSnippet()
+    End Sub
+
+    Sub showSnippet()
         If Content(dropElement) = elements.__________________________.ToString Then Return
 
-        Dim t As RichTextBox = textMarkup
-        Dim drop As ComboBox = dropElement
 
         If t.SelectionLength < 1 Then
             If Content(drop) = elements.i.ToString Or
@@ -77,7 +85,6 @@ Public Class Form1
 
         t.SelectionStart = s ''+ l
         t.ScrollToCaret()
-
     End Sub
 
     Private Sub buttonSendToClipboard_Click(sender As Object, e As EventArgs) Handles buttonSendToClipboard.Click
@@ -94,9 +101,9 @@ Public Class Form1
     End Sub
 
     Private Sub textMarkup_KeyDown(sender As Object, e As KeyEventArgs) Handles textMarkup.KeyDown
-        'If e.KeyCode = Keys.Z AndAlso (e.Control) Then
-        '    textMarkup.Undo()
-        'End If
+        If e.KeyCode = Keys.Z AndAlso (e.Control) Then
+            textMarkup.Undo()
+        End If
 
     End Sub
 End Class
