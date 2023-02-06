@@ -6,7 +6,7 @@
     <StartupObject>MarkdownMaker.MainForm</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
-    <ApplicationIcon>Papirus-Team-Papirus-Mimetypes-Text-x-markdown.ico</ApplicationIcon>
+    <ApplicationIcon>Custom-Icon-Design-Weather-Lightning.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

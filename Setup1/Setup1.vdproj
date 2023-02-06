@@ -57,6 +57,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_466079A6B7BF4C309AECF6B5D53141E4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4E82F5C18016529E4E48E4CB529E46C6"
         "OwnerKey" = "8:_FE63478D0CFF1D43622CFE51577068D5"
         "MsmSig" = "8:_UNDEFINED"
@@ -214,13 +220,13 @@
         "Entry"
         {
         "MsmKey" = "8:_FE63478D0CFF1D43622CFE51577068D5"
-        "OwnerKey" = "8:_515AAB06B97A4F9F8EFFDFB8633391E9"
+        "OwnerKey" = "8:_91ACC3F865F9394CD12D28E07CCCC47E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_FE63478D0CFF1D43622CFE51577068D5"
-        "OwnerKey" = "8:_91ACC3F865F9394CD12D28E07CCCC47E"
+        "OwnerKey" = "8:_515AAB06B97A4F9F8EFFDFB8633391E9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -400,6 +406,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -612,6 +626,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_466079A6B7BF4C309AECF6B5D53141E4"
+            {
+            "SourcePath" = "8:..\\Installation Files\\App Dir\\Custom-Icon-Design-Weather-Lightning.ico"
+            "TargetName" = "8:Custom-Icon-Design-Weather-Lightning.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_78EE686CA45F443B864D7B3D7976623D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4E82F5C18016529E4E48E4CB529E46C6"
@@ -1432,7 +1466,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:https://www.inovationware.com"
-        "ARPPRODUCTICON" = "8:_A5E281179D0D4532825807892D181629"
+        "ARPPRODUCTICON" = "8:_466079A6B7BF4C309AECF6B5D53141E4"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -1546,7 +1580,7 @@
             "Target" = "8:_03525F4E2E18484C94E23DBC4A8465DF"
             "Folder" = "8:_E657CDE79800451DB762225E8A7A966E"
             "WorkingFolder" = "8:_78EE686CA45F443B864D7B3D7976623D"
-            "Icon" = "8:_A5E281179D0D4532825807892D181629"
+            "Icon" = "8:_466079A6B7BF4C309AECF6B5D53141E4"
             "Feature" = "8:"
             }
         }

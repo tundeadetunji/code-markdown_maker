@@ -24,38 +24,37 @@ Partial Class MainForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.ToolStrip = New System.Windows.Forms.ToolStrip()
-        Me.OpenButton = New System.Windows.Forms.ToolStripButton()
+        Me.FontButton = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.MarkdownButton = New System.Windows.Forms.ToolStripButton()
         Me.HTMLButton = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.SaveButton = New System.Windows.Forms.ToolStripButton()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.StatusStrip = New System.Windows.Forms.StatusStrip()
-        Me.FontButton = New System.Windows.Forms.ToolStripButton()
+        Me.FontDialog = New System.Windows.Forms.FontDialog()
         Me.ToolStrip.SuspendLayout()
-        Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStrip
         '
-        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenButton, Me.FontButton, Me.ToolStripSeparator1, Me.MarkdownButton, Me.HTMLButton, Me.ToolStripSeparator2, Me.SaveButton})
+        Me.ToolStrip.BackColor = System.Drawing.Color.Green
+        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontButton, Me.ToolStripSeparator1, Me.MarkdownButton, Me.HTMLButton, Me.ToolStripSeparator2, Me.SaveButton})
         Me.ToolStrip.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip.Name = "ToolStrip"
         Me.ToolStrip.Size = New System.Drawing.Size(737, 25)
         Me.ToolStrip.TabIndex = 6
         Me.ToolStrip.Text = "ToolStrip"
         '
-        'OpenButton
+        'FontButton
         '
-        Me.OpenButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.OpenButton.Image = Global.MarkdownMaker.My.Resources.Resources.Files_icon_24
-        Me.OpenButton.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.OpenButton.Name = "OpenButton"
-        Me.OpenButton.Size = New System.Drawing.Size(23, 22)
-        Me.OpenButton.Text = "ToolStripButton1"
+        Me.FontButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.FontButton.Image = Global.MarkdownMaker.My.Resources.Resources.Apps_preferences_desktop_font_icon_24
+        Me.FontButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.FontButton.Name = "FontButton"
+        Me.FontButton.Size = New System.Drawing.Size(23, 22)
+        Me.FontButton.Text = "Change Font"
         '
         'ToolStripSeparator1
         '
@@ -69,7 +68,7 @@ Partial Class MainForm
         Me.MarkdownButton.ImageTransparentColor = System.Drawing.Color.Black
         Me.MarkdownButton.Name = "MarkdownButton"
         Me.MarkdownButton.Size = New System.Drawing.Size(23, 22)
-        Me.MarkdownButton.Text = "New"
+        Me.MarkdownButton.Text = "Markdown"
         '
         'HTMLButton
         '
@@ -79,6 +78,7 @@ Partial Class MainForm
         Me.HTMLButton.Name = "HTMLButton"
         Me.HTMLButton.Size = New System.Drawing.Size(23, 22)
         Me.HTMLButton.Text = "Open"
+        Me.HTMLButton.ToolTipText = "HTML"
         '
         'ToolStripSeparator2
         '
@@ -94,46 +94,23 @@ Partial Class MainForm
         Me.SaveButton.Size = New System.Drawing.Size(23, 22)
         Me.SaveButton.Text = "Save"
         '
-        'ToolStripStatusLabel
-        '
-        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
-        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(39, 17)
-        Me.ToolStripStatusLabel.Text = "Status"
-        '
-        'StatusStrip
-        '
-        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 501)
-        Me.StatusStrip.Name = "StatusStrip"
-        Me.StatusStrip.Padding = New System.Windows.Forms.Padding(1, 0, 16, 0)
-        Me.StatusStrip.Size = New System.Drawing.Size(737, 22)
-        Me.StatusStrip.TabIndex = 7
-        Me.StatusStrip.Text = "StatusStrip"
-        '
-        'FontButton
-        '
-        Me.FontButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.FontButton.Image = Global.MarkdownMaker.My.Resources.Resources.Apps_preferences_desktop_font_icon_24
-        Me.FontButton.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.FontButton.Name = "FontButton"
-        Me.FontButton.Size = New System.Drawing.Size(23, 22)
-        Me.FontButton.Text = "ToolStripButton1"
-        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.MarkdownMaker.My.Resources.Resources.MP900433117
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(737, 523)
         Me.Controls.Add(Me.ToolStrip)
-        Me.Controls.Add(Me.StatusStrip)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "MainForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Markdown + HTML Editor"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ToolStrip.ResumeLayout(False)
         Me.ToolStrip.PerformLayout()
-        Me.StatusStrip.ResumeLayout(False)
-        Me.StatusStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -144,9 +121,7 @@ Partial Class MainForm
     Friend WithEvents HTMLButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents SaveButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents OpenButton As ToolStripButton
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripStatusLabel As ToolStripStatusLabel
-    Friend WithEvents StatusStrip As StatusStrip
     Friend WithEvents FontButton As ToolStripButton
+    Friend WithEvents FontDialog As FontDialog
 End Class
