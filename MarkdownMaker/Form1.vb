@@ -2,6 +2,8 @@
 Imports iNovation.Code.General
 Imports MarkdownMaker.KB
 Imports iNovation.Code.Feedback
+Imports MarkdownMaker.Values
+Imports MarkdownMaker.Service
 Public Class Form1
 
     Private feedback As New iNovation.Code.Feedback
@@ -22,20 +24,11 @@ Public Class Form1
 
     Private Sub setupUI()
         BindProperty(dropLanguage, GetEnum(New defaultLanguage))
-        BindProperty(dropElement, GetEnum(New elements))
+        BindProperty(dropElement, GetEnum(New elementsMarkup))
         formatDrops({dropLanguage, dropElement})
         textMarkup.Focus()
     End Sub
 
-    Sub formatDrops(drops As Array)
-        If drops.Length = 0 Then Return
-        Dim d As ComboBox
-        For i = 0 To drops.Length - 1
-            d = CType(drops(i), ComboBox)
-            d.AutoCompleteMode = AutoCompleteMode.Suggest
-            d.AutoCompleteSource = AutoCompleteSource.ListItems
-        Next
-    End Sub
 
     Private Sub dropElement_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropElement.SelectedIndexChanged
         If Content(textMarkup).Length < 1 Then Return
@@ -94,7 +87,8 @@ Public Class Form1
     End Sub
 
     Private Sub buttonOpen_Click(sender As Object, e As EventArgs) Handles buttonOpen.Click
-        GetFile(textMarkup, FileDialogExpectedFormat.code)
+        Dim file As String = GetFile(textMarkup, FileDialogExpectedFormat.code)
+        If file.Length > 0 Then Text = "Editing " + file
     End Sub
 
     Private Sub buttonElement_Click(sender As Object, e As EventArgs) Handles buttonElement.Click
@@ -106,5 +100,8 @@ Public Class Form1
             textMarkup.Undo()
         End If
 
+    End Sub
+
+    Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
     End Sub
 End Class

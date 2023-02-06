@@ -53,6 +53,7 @@ Partial Class Form1
         Me.buttonFont.Size = New System.Drawing.Size(66, 33)
         Me.buttonFont.TabIndex = 3
         Me.buttonFont.UseVisualStyleBackColor = True
+        Me.buttonFont.Visible = False
         '
         'buttonSave
         '
